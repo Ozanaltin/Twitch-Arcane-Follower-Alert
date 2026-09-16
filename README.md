@@ -10,32 +10,15 @@ The alert combines a custom Arcane-style notification card with fast animated **
 
 <p align="center">
   <img
-    src="assets/Arcane-Follower-Purple.png"
-    alt="Twitch Arcane Follower Alert Card"
-    width="1000"
-  >
-</p>
-
-<p align="center">
-  <i>Static preview of the alert card. In the live alert, animated purple and blue lightning races around the edges of the frame.</i>
-</p>
-
-<!--
-When an animated preview is available, place it at:
-
-assets/preview.gif
-
-Then replace the static preview above with:
-
-<p align="center">
-  <img
     src="assets/preview.gif"
     alt="Animated Twitch Arcane Follower Alert"
     width="1000"
   >
 </p>
--->
 
+<p align="center">
+  <i>Animated preview of the current alert, rendered from the repository HTML/CSS and Arcane card image.</i>
+</p>
 ---
 
 ## Features
@@ -115,6 +98,10 @@ Contains the complete visual and animation system, including:
 
 The custom Arcane-style card used as the visual base of the alert.
 
+
+### `assets/preview.gif`
+
+An animated README preview rendered from the current alert HTML/CSS and card image.
 ---
 
 ## Lightning Effect
@@ -393,28 +380,9 @@ moves the alert farther down the screen.
 
 ## Animated README Preview
 
-GitHub README files cannot execute the Twitch HTML/CSS animation directly.
+GitHub README files cannot execute the Twitch HTML/CSS animation directly, so `assets/preview.gif` provides a rendered preview of the current alert.
 
-The most reliable way to demonstrate the complete effect inside this README is an animated GIF.
-
-The recommended future file is:
-
-```text
-assets/preview.gif
-```
-
-Once created, it can be displayed with:
-
-```html
-<p align="center">
-  <img
-    src="assets/preview.gif"
-    alt="Animated Twitch Arcane Follower Alert Preview"
-    width="1000"
-  >
-</p>
-```
-
+The GIF uses the same Arcane card image, follower copy, perimeter lightning, purple / blue color behavior, electrical flicker, transparent background, and animation timing as the repository build.
 ---
 
 ## Possible Future Variants
