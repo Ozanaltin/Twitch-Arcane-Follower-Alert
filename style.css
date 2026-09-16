@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Rajdhani:wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.alert_outer-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.alert_widget-container {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 440px;
+    max-width: 90%;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.alert_image-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.lightning-flash {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    bottom: -30px;
+    left: -30px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(179, 127, 255, 0.25) 0%,
+            rgba(83, 136, 255, 0.18) 30%,
+            rgba(113, 52, 230, 0.08) 50%,
+            transparent 72%
+        );
+    filter: blur(10px);
+    animation: flash-strike 4.37s ease-in-out infinite;
+}
+
+.lightning-bolt {
+    position: absolute;
+    width: 100px;
+    height: 44px;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: 50% 50%;
+    animation:
+        bolt-travel 0.5283s steps(1, end) infinite,
+        electric-color 5.73s steps(1, end) infinite;
+}
+
+.bolt-segment {
+    position: absolute;
+    display: block;
+    border-radius: 999px;
+    transform-origin: 0 50%;
+    background: #ffffff;
+    box-shadow:
+        0 0 2px currentColor,
+        0 0 5px currentColor,
+        0 0 9px currentColor,
+        0 0 15px currentColor;
+}
+
+.bolt-segment.main {
+    height: 2.4px;
+}
+
+.lightning-bolt .s1 {
+    left: 0;
+    top: 22px;
+    width: 16px;
+    transform: rotate(-15deg);
+}
+
+.lightning-bolt .s2 {
+    left: 15px;
+    top: 18px;
+    width: 18px;
+    transform: rotate(20deg);
+}
+
+.lightning-bolt .s3 {
+    left: 31px;
+    top: 24px;
+    width: 17px;
+    transform: rotate(-21deg);
+}
+
+.lightning-bolt .s4 {
+    left: 46px;
+    top: 18px;
+    width: 18px;
+    transform: rotate(18deg);
+}
+
+.lightning-bolt .s5 {
+    left: 62px;
+    top: 23px;
+    width: 17px;
+    transform: rotate(-19deg);
+}
+
+.lightning-bolt .s6 {
+    left: 77px;
+    top: 18px;
+    width: 18px;
+    transform: rotate(14deg);
+}
+
+.bolt-segment.branch {
+    height: 1.15px;
+    opacity: 0.82;
+}
+
+.lightning-bolt .b1 {
+    left: 15px;
+    top: 18px;
+    width: 14px;
+    transform: rotate(55deg);
+}
+
+.lightning-bolt .b2 {
+    left: 31px;
+    top: 24px;
+    width: 12px;
+    transform: rotate(-52deg);
+}
+
+.lightning-bolt .b3 {
+    left: 46px;
+    top: 18px;
+    width: 13px;
+    transform: rotate(50deg);
+}
+
+.lightning-bolt .b4 {
+    left: 62px;
+    top: 23px;
+    width: 12px;
+    transform: rotate(-54deg);
+}
+
+/* TOP EDGE */
+.bolt-top-left {
+    left: 12px;
+    top: -2px;
+    transform: rotate(18deg);
+    animation-delay: 0s, -1.14s;
+}
+
+.bolt-top-center {
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%) rotate(-2deg);
+    animation-delay: -0.0367s, -3.47s;
+}
+
+.bolt-top-right {
+    right: 12px;
+    top: -2px;
+    transform: rotate(-18deg);
+    animation-delay: -0.0733s, -0.63s;
+}
+
+/* RIGHT EDGE */
+.bolt-right-top {
+    right: -20px;
+    top: 4px;
+    transform: rotate(68deg);
+    animation-delay: -0.11s, -4.22s;
+}
+
+.bolt-right-center {
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    animation-delay: -0.1467s, -2.06s;
+}
+
+.bolt-right-bottom {
+    right: -20px;
+    bottom: 4px;
+    transform: rotate(112deg);
+    animation-delay: -0.1833s, -5.01s;
+}
+
+/* BOTTOM EDGE */
+.bolt-bottom-right {
+    right: 12px;
+    bottom: -2px;
+    transform: rotate(162deg);
+    animation-delay: -0.22s, -0.27s;
+}
+
+.bolt-bottom-center {
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%) rotate(182deg);
+    animation-delay: -0.2567s, -3.03s;
+}
+
+.bolt-bottom-left {
+    left: 12px;
+    bottom: -2px;
+    transform: rotate(198deg);
+    animation-delay: -0.2933s, -1.58s;
+}
+
+/* LEFT EDGE */
+.bolt-left-bottom {
+    left: -20px;
+    bottom: 4px;
+    transform: rotate(-112deg);
+    animation-delay: -0.33s, -4.81s;
+}
+
+.bolt-left-center {
+    left: -28px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    animation-delay: -0.3667s, -2.69s;
+}
+
+.bolt-left-top {
+    left: -20px;
+    top: 4px;
+    transform: rotate(-68deg);
+    animation-delay: -0.4033s, -0.94s;
+}
+
+.alert_image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    filter:
+        drop-shadow(0 0 5px rgba(119, 62, 255, 0.50))
+        drop-shadow(0 0 13px rgba(85, 31, 207, 0.28));
+}
+
+.alert_text-container {
+    position: absolute;
+    left: 28%;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    pointer-events: none;
+}
+
+.alert_title {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 2.2px;
+    color: #9f91d9;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 4px rgba(140, 100, 255, 0.7),
+        0 0 10px rgba(90, 40, 210, 0.35);
+}
+
+.alert_username {
+    margin-top: 3px;
+    max-width: 100%;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #e1d5ff;
+    text-shadow:
+        0 0 3px #6e42cc,
+        0 0 7px rgba(116, 71, 255, 0.85),
+        0 0 15px rgba(89, 42, 200, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.alert_subtitle {
+    margin-top: 3px;
+    font-family: "Rajdhani", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    color: #b9add9;
+    text-shadow:
+        0 0 5px rgba(88, 56, 180, 0.6);
+}
+
+@keyframes bolt-travel {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    8% { opacity: 0.20; }
+    11% { opacity: 1; }
+    15% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes electric-color {
+    0% {
+        color: #a849ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #e5c5ff)
+            drop-shadow(0 0 10px #b561ff)
+            drop-shadow(0 0 17px #772cff);
+    }
+
+    17% {
+        color: #4f96ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #d9ebff)
+            drop-shadow(0 0 10px #5fa4ff)
+            drop-shadow(0 0 17px #245dff);
+    }
+
+    31% {
+        color: #a849ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #e7c7ff)
+            drop-shadow(0 0 10px #bd65ff)
+            drop-shadow(0 0 17px #792cff);
+    }
+
+    48% {
+        color: #438cff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #d9eaff)
+            drop-shadow(0 0 10px #599cff)
+            drop-shadow(0 0 17px #2358eb);
+    }
+
+    63% {
+        color: #a849ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #e8ccff)
+            drop-shadow(0 0 10px #b85dff)
+            drop-shadow(0 0 17px #7528ee);
+    }
+
+    79% {
+        color: #4b93ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #dcecff)
+            drop-shadow(0 0 10px #62a8ff)
+            drop-shadow(0 0 17px #285fff);
+    }
+
+    100% {
+        color: #a849ff;
+        filter:
+            drop-shadow(0 0 2px #ffffff)
+            drop-shadow(0 0 5px #e5c5ff)
+            drop-shadow(0 0 10px #b561ff)
+            drop-shadow(0 0 17px #772cff);
+    }
+}
+
+@keyframes flash-strike {
+    0%,
+    69%,
+    75%,
+    79%,
+    100% {
+        opacity: 0;
+    }
+
+    70% { opacity: 0.45; }
+    71% { opacity: 0.12; }
+    72% { opacity: 0.60; }
+    73% { opacity: 0.18; }
+    74% { opacity: 0.42; }
+}
