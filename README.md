@@ -1,74 +1,72 @@
 # Twitch Arcane Follower Alert
 
-Arcane Mage-themed Twitch follower alert for the English channel, featuring a custom purple card, animated purple/blue lightning that races around the card edges, fast multi-strike timing, and rounded corner transitions.
+A custom **Arcane Mage-inspired Twitch follower alert** built with HTML and CSS.
 
-## Features
+The alert combines a custom Arcane-style notification card with fast animated **purple and blue lightning** that travels around the perimeter of the frame.
 
-- English follower alert text
-- Custom Arcane follower card artwork
-- Purple and blue lightning effects
-- Lightning travels around the card perimeter
-- Fast animation speed (current tuned version)
-- Rounded corner pathing so the electricity flows around the frame instead of snapping through sharp 90° turns
-- Cinzel + Rajdhani typography
-- Twitch `{username}` alert variable support
-- Transparent background for OBS/Twitch browser sources
+It was designed for a World of Warcraft / Arcane Mage themed stream, with an emphasis on magical energy, clean typography, and a fast electrical animation that remains readable during gameplay.
 
 ---
 
 ## Preview
 
 <p align="center">
-  <img src="assets/Arcane-Follower-Purple.png" alt="Twitch Arcane Follower Alert preview" width="700">
+  <img
+    src="assets/Arcane-Follower-Purple.png"
+    alt="Twitch Arcane Follower Alert Card"
+    width="1000"
+  >
 </p>
 
-> Static preview of the card artwork.  
-> In the live Twitch alert, animated purple and blue lightning spins around the edges of the card.
+<p align="center">
+  <i>
+    Static preview of the alert card. In the live alert, animated purple and blue lightning races around the edges of the frame.
+  </i>
+</p>
+
+<!--
+When an animated preview is available, place it at:
+
+assets/preview.gif
+
+Then remove this comment block and use:
+
+## Animated Preview
+
+<p align="center">
+  <img
+    src="assets/preview.gif"
+    alt="Animated Twitch Arcane Follower Alert"
+    width="1000"
+  >
+</p>
+-->
 
 ---
 
-## Files
+## Features
 
-```text
-.
-├── index.html
-├── style.css
-├── README.md
-└── assets/
-    └── Arcane-Follower-Purple.png
-```
+- Arcane Mage-inspired visual design
+- Custom Arcane follower card
+- Purple lightning
+- Blue lightning
+- Bright electrical core and glow
+- Fast lightning movement around the card perimeter
+- Randomized-looking purple / blue color behavior
+- Multi-strike electrical flicker
+- Rounded corner transitions
+- Transparent background
+- Twitch `{username}` variable support
+- Cinzel and Rajdhani typography
+- Designed for Twitch Alerts and OBS/browser-source workflows
 
-## Twitch setup
+---
 
-1. Open **Creator Dashboard → Alerts**.
-2. Select your follower alert variant.
-3. Enable custom HTML/CSS.
-4. Copy the alert markup from `index.html` into Twitch's HTML editor. If Twitch only wants the alert body, copy the contents inside `<body>`.
-5. Copy `style.css` into Twitch's CSS editor.
-6. Keep the `{username}` variable unchanged.
-7. Save the alert and send a test follow alert.
+## Alert Text
 
-The HTML references the copy of the card image stored in this repository.
-
-## Current alert text
+The current English follower alert displays:
 
 ```text
 NEW FOLLOWER
 {username}
 The Circle grows stronger.
-```
-
-## Current visual tuning
-
-- Alert position: `24%` from the top of the Twitch alert canvas
-- Card width: `440px`
-- Text block starts at `28%` from the left side of the card
-- Lightning travel cycle: `0.5283s`
-- Purple/blue color cycle: `5.73s`
-- Lightning corner angles are softened to create a more curved perimeter flow
-
-## Notes
-
-The lightning color pattern is intentionally driven by separate movement and color animation timings. CSS does not provide true random number generation, but the unsynchronized cycles and per-segment delays create a randomized-looking sequence of purple and blue strikes when alerts trigger.
-
-The card asset in `assets/Arcane-Follower-Purple.png` is included with the project so the alert does not depend solely on the original Twitch alert-asset URL.
