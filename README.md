@@ -61,7 +61,8 @@ Twitch-Arcane-Follower-Alert/
 ├── style.css
 ├── README.md
 └── assets/
-    └── Arcane-Follower-Purple.png
+    ├── Arcane-Follower-Purple.png
+    └── preview.gif
 ```
 
 ---
@@ -102,6 +103,7 @@ The custom Arcane-style card used as the visual base of the alert.
 ### `assets/preview.gif`
 
 An animated README preview rendered from the current alert HTML/CSS and card image.
+
 ---
 
 ## Lightning Effect
