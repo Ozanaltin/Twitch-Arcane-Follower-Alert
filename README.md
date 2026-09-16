@@ -14,6 +14,19 @@ Arcane Mage-themed Twitch follower alert for the English channel, featuring a cu
 - Twitch `{username}` alert variable support
 - Transparent background for OBS/Twitch browser sources
 
+---
+
+## Preview
+
+<p align="center">
+  <img src="assets/Arcane-Follower-Purple.png" alt="Twitch Arcane Follower Alert preview" width="700">
+</p>
+
+> Static preview of the card artwork.  
+> In the live Twitch alert, animated purple and blue lightning spins around the edges of the card.
+
+---
+
 ## Files
 
 ```text
